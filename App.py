@@ -23,7 +23,7 @@ app.config['MQTT_BROKER_PORT'] = 8883
 app.config['MQTT_TLS_ENABLED'] = True
 app.config['MQTT_TLS_INSECURE'] = False
 app.config['MQTT_TLS_CA_CERTS'] = 'server.pem'
-#app.config['MQTT_TLS_CA_CERTS'] = 'cacert.pem'
+app.config['MQTT_TLS_CA_CERTS'] = 'cacert.pem'
 #app.config['MQTT_TLS_CERTFILE'] = 'client.crt'
 #app.config['MQTT_TLS_KEYFILE'] = 'client.key'
 app.config['CLIENT_ID'] = 'Rocky'
@@ -65,4 +65,4 @@ def handle_logging(client, userdata, level, buf):
     print(level, buf)
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=5000, use_reloader=False, debug=True)
+    socketio.run(app, host='0.0.0.0', port=80, use_reloader=False, debug=True)
