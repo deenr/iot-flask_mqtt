@@ -31,7 +31,7 @@ app.config['CLIENT_ID'] = 'Rocky'
 app.config['MQTT_TLS_VERSION'] = ssl.PROTOCOL_TLSv1_2
 
 mqtt = Mqtt(app)
-socketio = SocketIO(app)
+#socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
 bootstrap = Bootstrap(app)
 socketio = SocketIO(app,cors_allowed_origins='*', async_mode="eventlet")
