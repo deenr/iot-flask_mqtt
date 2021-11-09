@@ -35,7 +35,7 @@ cors = CORS(app, resources={r"*": {"origins": "*"}})
 mqtt = Mqtt(app)
 #socketio = SocketIO(app)
 bootstrap = Bootstrap(app)
-socketio = SocketIO(app,cors_allowed_origins='*', async_mode="eventlet")
+socketio = SocketIO(app,cors_allowed_origins='*')
 #socketio.init_app(app, cors_allowed_origins="*")
 
 
