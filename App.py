@@ -11,7 +11,7 @@ eventlet.monkey_patch()
 
 app = Flask(__name__)
 app.config['SECRET'] = 'my secret key'
-app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.config['TEMPLATES_AUTO_RELOAD'] = False
 app.config['MQTT_BROKER_URL'] = '5ffddf1dac9d40e2949c6440eaa9eb79.s1.eu.hivemq.cloud'
 #app.config['MQTT_BROKER_URL'] = '192.168.1.5'
 #app.config['MQTT_BROKER_PORT'] = 1883
