@@ -23,13 +23,14 @@ app.config['MQTT_BROKER_PORT'] = 8883
 app.config['MQTT_TLS_ENABLED'] = True
 app.config['MQTT_TLS_INSECURE'] = False
 app.config['MQTT_TLS_CA_CERTS'] = 'server.pem'
-app.config['MQTT_TLS_CA_CERTS'] = 'cacert.pem'
+#app.config['MQTT_TLS_CA_CERTS'] = 'cacert.pem'
 #app.config['MQTT_TLS_CERTFILE'] = 'client.crt'
 #app.config['MQTT_TLS_KEYFILE'] = 'client.key'
 app.config['CLIENT_ID'] = 'Rocky'
 
 app.config['MQTT_TLS_VERSION'] = ssl.PROTOCOL_TLSv1_2
 
+cors = CORS(app, resources={r"*": {"origins": "*"}})
 mqtt = Mqtt(app)
 #socketio = SocketIO(app)
 bootstrap = Bootstrap(app)
