@@ -13,4 +13,5 @@ python-engineio==3.13.2
 python-socketio==4.6.0
 webencodings==0.5.1
 Werkzeug==1.0.1
+gunicorn
 
