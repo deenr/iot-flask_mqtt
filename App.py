@@ -31,11 +31,10 @@ app.config['CLIENT_ID'] = 'Rocky'
 app.config['MQTT_TLS_VERSION'] = ssl.PROTOCOL_TLSv1_2
 
 mqtt = Mqtt(app)
-socketio = SocketIO(app)
-
+#socketio = SocketIO(app)
 bootstrap = Bootstrap(app)
 socketio = SocketIO(app,cors_allowed_origins='*', async_mode="eventlet")
-socketio.init_app(app, cors_allowed_origins="*")
+#socketio.init_app(app, cors_allowed_origins="*")
 
 
 @app.route('/')
