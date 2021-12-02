@@ -12,22 +12,19 @@ eventlet.monkey_patch()
 app = Flask(__name__)
 app.config['SECRET'] = 'my secret key'
 app.config['TEMPLATES_AUTO_RELOAD'] = False
-app.config['MQTT_BROKER_URL'] = '5ffddf1dac9d40e2949c6440eaa9eb79.s1.eu.hivemq.cloud'
+app.config['MQTT_BROKER_URL'] = 'e8bf9123a02b43718ff5a85861b6d572.s1.eu.hivemq.cloud'
 #app.config['MQTT_BROKER_URL'] = '192.168.1.5'
 #app.config['MQTT_BROKER_PORT'] = 1883
-app.config['MQTT_USERNAME'] = 'uhasselt'
-app.config['MQTT_PASSWORD'] = 'uHasselt007'
+app.config['MQTT_USERNAME'] = 'deenr'
+app.config['MQTT_PASSWORD'] = 'deenR123'
 app.config['MQTT_KEEPALIVE'] = 5
 
 # Parameters for SSL enabled
 app.config['MQTT_BROKER_PORT'] = 8883
 app.config['MQTT_TLS_ENABLED'] = True
 app.config['MQTT_TLS_INSECURE'] = False
-#app.config['MQTT_TLS_CA_CERTS'] = 'server.pem'
 app.config['MQTT_TLS_CA_CERTS'] = 'cacert.pem'
-#app.config['MQTT_TLS_CERTFILE'] = 'client.crt'
-#app.config['MQTT_TLS_KEYFILE'] = 'client.key'
-app.config['CLIENT_ID'] = 'Rocky'
+app.config['CLIENT_ID'] = 'clientId-5WAmRKUq1a'
 
 app.config['MQTT_TLS_VERSION'] = ssl.PROTOCOL_TLSv1_2
 
