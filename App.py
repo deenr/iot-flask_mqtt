@@ -41,7 +41,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/beerpong')
-def index():
+def beerpong():
     return render_template('beerpong.html')
 
 @socketio.on('publish')
