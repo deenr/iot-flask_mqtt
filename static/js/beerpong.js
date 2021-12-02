@@ -40,4 +40,21 @@ $(document).ready(function() {
             }));
         }
     })
-  });
+
+    
+    $('#send_leds_player_1').click(function(event) {
+        var topic = 'leds_data_player_1';
+        var message = $('#data_leds_player_1').val();
+        var qos = 1;
+        var data = '{"topic": "' + topic + '", "message": "' + message + '", "qos": ' + qos + '}';
+        socket.emit('publish', data=data);
+    });
+
+    $('#send_leds_player_2').click(function(event) {
+        var topic = 'leds_data_player_2';
+        var message = $('#data_leds_player_2').val();
+        var qos = 1;
+        var data = '{"topic": "' + topic + '", "message": "' + message + '", "qos": ' + qos + '}';
+        socket.emit('publish', data=data);
+    });
+});
