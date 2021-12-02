@@ -38,7 +38,7 @@
     });
 
     socket.on('mqtt_message', function(data) {
-      console.log(data);
+      // console.log(data);
       var text = '(' + data['topic'] + ' qos: ' + data['qos'] + ') ' + data['payload'];
       var $textarea = $('#subscribe_messages');
       $textarea.val($textarea.val() + text + '\n');
