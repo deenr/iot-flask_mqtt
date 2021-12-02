@@ -2,6 +2,12 @@ $(document).ready(function() {
     //var socket = io.connect('http://' + document.domain + ':' + location.port, {secure: true});
 	var socket = io.connect('/');
 
+    var subscribe_data_player_1 = '{"topic": "subscribe_data_player_1", "qos": 1}';
+    socket.emit('subscribe', data=subscribe_data_player_1);
+
+    var subscribe_data_player_2 = '{"topic": "subscribe_data_player_2", "qos": 1}';
+    socket.emit('subscribe', data=subscribe_data_player_2);
+
     socket.on('mqtt_message', function(data) {
         console.log(data["topic"])
         if (data["topic"] === "subscribe_data_player_1") {
