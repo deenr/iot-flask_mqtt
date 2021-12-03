@@ -146,6 +146,7 @@ function setCorrectCupColor(cup_id) {
     var player_number = cup_id.charAt(cup_id.length - 6);
     var cup_number = cup_id.charAt(cup_id.length - 1);
 
+
     if (player_number === '1') {
         var RGB = player1_leds.charAt(player1_leds.length - 18 + (cup_number - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 17 + (cup_number - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 16 + (cup_number - 1) * 3);
     } else {
