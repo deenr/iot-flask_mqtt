@@ -108,7 +108,7 @@ $(document).ready(function () {
 
         console.log($('#' + g_id_selected_dot).css('background-color'));
 
-        if ($('#' + g_id_selected_dot).css('background-color') !== '#2C2C2C') {
+        if ($('#' + g_id_selected_dot).css('background-color') !== 'rgb(44, 44, 44)') {
             switch (RGB) {
                 case '000':
                     $('#' + g_id_selected_dot).css('background-color', '#2C2C2C');
