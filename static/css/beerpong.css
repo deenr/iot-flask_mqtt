@@ -9,8 +9,16 @@
   margin-bottom: 12.5px;
 }
 
+.field {
+  width: 100vw;
+}
+
 .player1 {
   float: left;
+}
+
+.player1 #player1_leds {
+  display: none;
 }
 
 .player1_row1 {
@@ -29,6 +37,10 @@
   margin-top: 62.5px;
 }
 
+.player2 #player2_leds {
+  display: none;
+}
+
 .player2_row1 {
   float: left;
   margin-top: 62.5px;
@@ -45,4 +57,27 @@
   float: left;
   margin-left: 6.25px;
 }
-/*# sourceMappingURL=styles.css.map */
+
+.rgb_div {
+  display: none;
+  padding-left: 500px;
+}
+
+#red_dot {
+  background-color: #FF3333;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+}
+
+#green_dot {
+  background-color: #33FF33;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+}
+
+#blue_dot {
+  background-color: #3399FF;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+}
+/*# sourceMappingURL=beerpong.css.map */

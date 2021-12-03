@@ -1,61 +1,59 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Our Funky HTML Page</title>
-        <meta name="description" content="Our first page">
-        <meta name="keywords" content="html tutorial template">
 
-        <link rel="stylesheet" href="static/css/beerpong.css">
+<head>
+    <title>Our Funky HTML Page</title>
+    <meta name="description" content="Our first page">
+    <meta name="keywords" content="html tutorial template">
 
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="static/js/beerpong.js"></script>
-    </head>
+    <link rel="stylesheet" href="../static/css/beerpong.css">
 
-    <body>
-        <div class="field">
-            <div class="player1">
-                <div class="player1_row1">
-                    <span class="dot" id="player1_dot1"></span>
-                    <span class="dot" id="player1_dot2"></span>
-                    <span class="dot" id="player1_dot3"></span>
-                </div>
-                <div class="player1_row2">
-                    <span class="dot" id="player1_dot4"></span>
-                    <span class="dot" id="player1_dot5"></span>
-                </div>
-                <div class="player1_row3">
-                    <span class="dot" id="player1_dot6"></span>
-                </div>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/js/beerpong.js"></script>
+</head>
+
+<body>
+    <div class="field">
+        <div class="player1">
+            <div class="player1_row1">
+                <span class="dot" id="player1_dot1" onclick="setCupColor('player1_dot1')"></span>
+                <span class="dot" id="player1_dot2" onclick="setCupColor('player1_dot2')"></span>
+                <span class="dot" id="player1_dot3" onclick="setCupColor('player1_dot3')"></span>
             </div>
-    
-            <div class="player2">
-                <div class="player2_row1">
-                    <span class="dot" id="player2_dot1"></span>
-                </div>
-                <div class="player2_row2">
-                    <span class="dot" id="player2_dot2"></span>
-                    <span class="dot" id="player2_dot3"></span>
-                </div>
-                <div class="player2_row3">
-                    <span class="dot" id="player2_dot4"></span>
-                    <span class="dot" id="player2_dot5"></span>
-                    <span class="dot" id="player2_dot6"></span>
-                </div>
+            <div class="player1_row2">
+                <span class="dot" id="player1_dot4" onclick="setCupColor('player1_dot4')"></span>
+                <span class="dot" id="player1_dot5" onclick="setCupColor('player1_dot5')"></span>
+            </div>
+            <div class="player1_row3">
+                <span class="dot" id="player1_dot6" onclick="setCupColor('player1_dot6')"></span>
             </div>
         </div>
 
-        <form>
-            <p>player 1 leds</p>
-            <input id="data_leds_player_1" type="text">
-            <button type="button" id="send_leds_player_1">Send</button>
-        </form>
-        
-        <form>
-            <p>player 2 leds</p>
-            <input id="data_leds_player_2" type="text">
-            <button type="button" id="send_leds_player_2">Send</button>
-        </form>
-        
-    </body>
+        <div class="player2">
+            <div class="player2_row1">
+                <span class="dot" id="player2_dot1" onclick="setCupColor('player2_dot1')"></span>
+            </div>
+            <div class="player2_row2">
+                <span class="dot" id="player2_dot2" onclick="setCupColor('player2_dot2')"></span>
+                <span class="dot" id="player2_dot3" onclick="setCupColor('player2_dot3')"></span>
+            </div>
+            <div class="player2_row3">
+                <span class="dot" id="player2_dot4" onclick="setCupColor('player2_dot4')"></span>
+                <span class="dot" id="player2_dot5" onclick="setCupColor('player2_dot5')"></span>
+                <span class="dot" id="player2_dot6" onclick="setCupColor('player2_dot6')"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="rgb_div">
+        <span class="dot" id="red_dot" onclick="changeRGBColor('red_dot')"></span>
+        <span class="dot" id="green_dot" onclick="changeRGBColor('green_dot')"></span>
+        <span class="dot" id="blue_dot" onclick="changeRGBColor('blue_dot')"></span>
+        <button id="submit_rgb">Submit</button>
+    </div>
+
+
+</body>
+
 </html>

@@ -10,9 +10,16 @@ $radius: 50px;
     margin-bottom: $radius/4;
 }
 
+.field {
+    width: 100vw;
+}
+
 .player1 {
     float: left;
 
+    #player1_leds {
+        display: none;
+    }
 }
 
 .player1_row1 {
@@ -31,33 +38,11 @@ $radius: 50px;
     margin-top: $radius + $radius/4;
 }
 
-// #player1_dot1 {
-//     background-color: green;
-
-// }
-
-// #player1_dot2 {
-//     background-color: blue;
-// }
-
-// #player1_dot3 {
-//     background-color: red;
-// }
-
-// #player1_dot4 {
-//     background-color: brown;
-// }
-
-// #player1_dot5 {
-//     background-color: gold;
-// }
-
-// #player1_dot6 {
-//     background-color: aquamarine;
-// }
-
 
 .player2 {
+    #player2_leds {
+        display: none;
+    }
 }
 
 .player2_row1 {
@@ -77,26 +62,22 @@ $radius: 50px;
     margin-left: $radius/8;
 }
 
-// #player2_dot1 {
-//     background-color: orange;
-// }
+.rgb_div {
+    display: none;
+    padding-left: 500px;
+}
 
-// #player2_dot2 {
-//     background-color: pink;
-// }
+#red_dot {
+    background-color: #FF3333;
+    filter: brightness(1);
+}
 
-// #player2_dot3 {
-//     background-color: purple;
-// }
+#green_dot {
+    background-color: #33FF33;
+    filter: brightness(1);
+}
 
-// #player2_dot4 {
-//     background-color: indianred;
-// }
-
-// #player2_dot5 {
-//     background-color: olivedrab;
-// }
-
-// #player2_dot6 {
-//     background-color: tomato;
-// }
+#blue_dot {
+    background-color: #3399FF;
+    filter: brightness(1);
+}
