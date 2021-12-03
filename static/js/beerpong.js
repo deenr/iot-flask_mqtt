@@ -106,34 +106,37 @@ $(document).ready(function () {
             socket.emit('publish', data = data);
         }
 
-        switch (RGB) {
-            case '000':
-                $('#' + g_id_selected_dot).css('background-color', '#2C2C2C');
-                break;
-            case '001':
-                $('#' + g_id_selected_dot).css('background-color', '#3399FF');
-                break;
-            case '010':
-                $('#' + g_id_selected_dot).css('background-color', '#33FF33');
-                break;
-            case '011':
-                $('#' + g_id_selected_dot).css('background-color', '#33FFFF');
-                break;
-            case '100':
-                $('#' + g_id_selected_dot).css('background-color', '#FF3333');
-                break;
-            case '101':
-                $('#' + g_id_selected_dot).css('background-color', '#9933FF');
-                break;
-            case '110':
-                $('#' + g_id_selected_dot).css('background-color', '#FFFF33');
-                break;
-            case '111':
-                $('#' + g_id_selected_dot).css('background-color', '#C0C0C0');
-                break;
-            default:
-                $('#' + g_id_selected_dot).css('background-color', '#BBB');
+        if ($('#' + g_id_selected_dot).css('background-color') !== '#2C2C2C') {
+            switch (RGB) {
+                case '000':
+                    $('#' + g_id_selected_dot).css('background-color', '#2C2C2C');
+                    break;
+                case '001':
+                    $('#' + g_id_selected_dot).css('background-color', '#3399FF');
+                    break;
+                case '010':
+                    $('#' + g_id_selected_dot).css('background-color', '#33FF33');
+                    break;
+                case '011':
+                    $('#' + g_id_selected_dot).css('background-color', '#33FFFF');
+                    break;
+                case '100':
+                    $('#' + g_id_selected_dot).css('background-color', '#FF3333');
+                    break;
+                case '101':
+                    $('#' + g_id_selected_dot).css('background-color', '#9933FF');
+                    break;
+                case '110':
+                    $('#' + g_id_selected_dot).css('background-color', '#FFFF33');
+                    break;
+                case '111':
+                    $('#' + g_id_selected_dot).css('background-color', '#C0C0C0');
+                    break;
+                default:
+                    $('#' + g_id_selected_dot).css('background-color', '#BBB');
+            }
         }
+
 
         $('.rgb_div').hide();
     });
