@@ -22,9 +22,10 @@ $(document).ready(function () {
                 var dot = '#player1_dot' + (i + 1);
                 console.log(dot)
                 if (sensor_value === "1") {
-                    $(dot).css("background-color", "green");
+                    // $(dot).css("background-color", "green");
+                    setCorrectCupColor()
                 } else {
-                    $(dot).css("background-color", "red");
+                    $(dot).css("background-color", "#2C2C2C");
                 }
             }));
         }
@@ -37,9 +38,10 @@ $(document).ready(function () {
                 var dot = '#player2_dot' + (i + 1);
                 console.log(dot)
                 if (sensor_value === "1") {
-                    $(dot).css("background-color", "green");
+                    // $(dot).css("background-color", "green");
+                    setCorrectCupColor()
                 } else {
-                    $(dot).css("background-color", "red");
+                    $(dot).css("background-color", "#2C2C2C");
                 }
             }));
         }
@@ -140,7 +142,56 @@ $(document).ready(function () {
     });
 });
 
-function setCupColor(id) {
+function setCorrectCupColor() {
+    var players = ['1', '2'];
+    var dots = ['1', '2', '3', '4', '5', '6'];
+    players.forEach(i => {
+        index_player_number = 6;
+
+        id_cup_player = id.substring(0, index_player_number) + i + id.substring(index_player_number + 1);
+
+        dots.forEach(j => {
+            index_dot_number = 11;
+
+            id_cup_player_and_number = id_cup_player.slice(0, -1) + j;
+
+            $('#' + id_cup_player_and_number).css('filter', 'brightness(1)');
+
+            var RGB = player1_leds.charAt(player1_leds.length - 18 + (dot_number - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 17 + (dot_number - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 16 + (dot_number - 1) * 3);
+
+            switch (RGB) {
+                case '000':
+                    $('#' + id_cup_player_and_number).css('background-color', '#2C2C2C');
+                    break;
+                case '001':
+                    $('#' + id_cup_player_and_number).css('background-color', '#3399FF');
+                    break;
+                case '010':
+                    $('#' + id_cup_player_and_number).css('background-color', '#33FF33');
+                    break;
+                case '011':
+                    $('#' + id_cup_player_and_number).css('background-color', '#33FFFF');
+                    break;
+                case '100':
+                    $('#' + id_cup_player_and_number).css('background-color', '#FF3333');
+                    break;
+                case '101':
+                    $('#' + id_cup_player_and_number).css('background-color', '#9933FF');
+                    break;
+                case '110':
+                    $('#' + id_cup_player_and_number).css('background-color', '#FFFF33');
+                    break;
+                case '111':
+                    $('#' + id_cup_player_and_number).css('background-color', '#C0C0C0');
+                    break;
+                default:
+                    $('#' + id_cup_player_and_number).css('background-color', '#BBB');
+            }
+        });
+    });
+}
+
+function changeCupColor(id) {
     var players = ['1', '2'];
     var dots = ['1', '2', '3', '4', '5', '6'];
     players.forEach(i => {
