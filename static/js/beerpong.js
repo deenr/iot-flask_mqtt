@@ -19,7 +19,7 @@ $(document).ready(function () {
             sensor_values = payload.split("");
 
             sensor_values.forEach((function (sensor_value, i) {
-                var dot = '#player1_dot' + (i + 1);
+                var dot = 'player1_dot' + (i + 1);
                 console.log(dot)
                 if (sensor_value === "1") {
                     // $(dot).css("background-color", "green");
@@ -35,7 +35,7 @@ $(document).ready(function () {
             sensor_values = payload.split("");
 
             sensor_values.forEach((function (sensor_value, i) {
-                var dot = '#player2_dot' + (i + 1);
+                var dot = 'player2_dot' + (i + 1);
                 console.log(dot)
                 if (sensor_value === "1") {
                     // $(dot).css("background-color", "green");
