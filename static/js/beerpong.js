@@ -152,6 +152,7 @@ function setCorrectCupColor(cup_id) {
     } else {
         var RGB = player2_leds.charAt(player2_leds.length - 18 + (cup_number - 1) * 3) + '' + player2_leds.charAt(player2_leds.length - 17 + (cup_number - 1) * 3) + '' + player2_leds.charAt(player2_leds.length - 16 + (cup_number - 1) * 3);
     }
+    console.log(cup_id, RGB);
 
     switch (RGB) {
         case '000':
