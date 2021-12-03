@@ -77,7 +77,5 @@
 
 #blue_dot {
   background-color: #3399FF;
-  -webkit-filter: brightness(1);
-          filter: brightness(1);
 }
 /*# sourceMappingURL=beerpong.css.map */
