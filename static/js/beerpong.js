@@ -91,15 +91,16 @@ $(document).ready(function () {
             player1_leds = player1_leds.substring(0, (led_number - 1) * 3) + RGB + player1_leds.substring((led_number - 1) * 3 + 3);
 
             var topic = 'ledValP1';
-            var message = $('#player1_leds').val();
+            var message = player1_leds;
             var qos = 1;
+            console.log()
             var data = '{"topic": "' + topic + '", "message": "' + message + '", "qos": ' + qos + '}';
             socket.emit('publish', data = data);
         } else {
             player2_leds = player1_leds.substring(0, (led_number - 1) * 3) + RGB + player2_leds.substring((led_number - 1) * 3 + 3);
 
             var topic = 'ledValP2';
-            var message = $('#player2_leds').val();
+            var message = player2_leds;
             var qos = 1;
             var data = '{"topic": "' + topic + '", "message": "' + message + '", "qos": ' + qos + '}';
             socket.emit('publish', data = data);
