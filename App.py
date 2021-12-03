@@ -13,11 +13,11 @@ eventlet.monkey_patch()
 app = Flask(__name__)
 app.config['SECRET'] = 'my secret key'
 app.config['TEMPLATES_AUTO_RELOAD'] = False
-app.config['MQTT_BROKER_URL'] = 'e8bf9123a02b43718ff5a85861b6d572.s1.eu.hivemq.cloud'
+app.config['MQTT_BROKER_URL'] = '8e7cb7e79ef04fd996c2fc920e3472bd.s1.eu.hivemq.cloud'
 # app.config['MQTT_BROKER_URL'] = '192.168.1.5'
 # app.config['MQTT_BROKER_PORT'] = 1883
-app.config['MQTT_USERNAME'] = 'deenr'
-app.config['MQTT_PASSWORD'] = 'deenR123'
+app.config['MQTT_USERNAME'] = 'BeerPong'
+app.config['MQTT_PASSWORD'] = 'BeerPong123'
 app.config['MQTT_KEEPALIVE'] = 5
 
 # Parameters for SSL enabled
@@ -25,7 +25,7 @@ app.config['MQTT_BROKER_PORT'] = 8883
 app.config['MQTT_TLS_ENABLED'] = True
 app.config['MQTT_TLS_INSECURE'] = False
 app.config['MQTT_TLS_CA_CERTS'] = 'cacert.pem'
-app.config['CLIENT_ID'] = 'clientId-5WAmRKUq1a'
+app.config['CLIENT_ID'] = 'clientId-jOhjWA7Pbj'
 
 app.config['MQTT_TLS_VERSION'] = ssl.PROTOCOL_TLSv1_2
 
@@ -81,6 +81,6 @@ def handle_logging(client, userdata, level, buf):
 
 
 if __name__ == '__main__':
-    mqtt.subscribe('subscribe_data_player_1')
-    mqtt.subscribe('subscribe_data_player_2')
+    # mqtt.subscribe('subscribe_data_player_1')
+    # mqtt.subscribe('subscribe_data_player_2')
     socketio.run(app, host='0.0.0.0', port=80, use_reloader=False, debug=True)
