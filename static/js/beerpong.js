@@ -22,8 +22,8 @@ $(document).ready(function () {
                 var dot = '#player1_dot' + (i + 1);
                 console.log(dot)
                 if (sensor_value === "1") {
-                    $(dot).css("background-color", "green");
-                    // setCorrectCupColor()
+                    // $(dot).css("background-color", "green");
+                    setCorrectCupColor();
                 } else {
                     $(dot).css("background-color", "#2C2C2C");
                 }
@@ -38,8 +38,8 @@ $(document).ready(function () {
                 var dot = '#player2_dot' + (i + 1);
                 console.log(dot)
                 if (sensor_value === "1") {
-                    $(dot).css("background-color", "green");
-                    // setCorrectCupColor()
+                    // $(dot).css("background-color", "green");
+                    setCorrectCupColor();
                 } else {
                     $(dot).css("background-color", "#2C2C2C");
                 }
@@ -143,12 +143,13 @@ $(document).ready(function () {
 });
 
 function setCorrectCupColor() {
+    var id_example = "player1_dot2";
     var players = ['1', '2'];
     var dots = ['1', '2', '3', '4', '5', '6'];
     players.forEach(i => {
         index_player_number = 6;
 
-        id_cup_player = id.substring(0, index_player_number) + i + id.substring(index_player_number + 1);
+        id_cup_player = id_example.substring(0, index_player_number) + i + id_example.substring(index_player_number + 1);
 
         dots.forEach(j => {
             index_dot_number = 11;
@@ -157,7 +158,7 @@ function setCorrectCupColor() {
 
             $('#' + id_cup_player_and_number).css('filter', 'brightness(1)');
 
-            var RGB = player1_leds.charAt(player1_leds.length - 18 + (dot_number - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 17 + (dot_number - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 16 + (dot_number - 1) * 3);
+            var RGB = player1_leds.charAt(player1_leds.length - 18 + (j - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 17 + (j - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 16 + (j - 1) * 3);
 
             switch (RGB) {
                 case '000':
