@@ -147,9 +147,9 @@ function setCorrectCupColor(cup_id) {
     var cup_number = cup_id.charAt(cup_id.length - 1);
 
     if (player_number === '1') {
-        var RGB = player1_leds.charAt(player1_leds.length - 18 + (cup_id - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 17 + (cup_id - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 16 + (cup_id - 1) * 3);
+        var RGB = player1_leds.charAt(player1_leds.length - 18 + (cup_number - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 17 + (cup_number - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 16 + (cup_number - 1) * 3);
     } else {
-        var RGB = player2_leds.charAt(player2_leds.length - 18 + (cup_id - 1) * 3) + '' + player2_leds.charAt(player2_leds.length - 17 + (cup_id - 1) * 3) + '' + player2_leds.charAt(player2_leds.length - 16 + (cup_id - 1) * 3);
+        var RGB = player2_leds.charAt(player2_leds.length - 18 + (cup_number - 1) * 3) + '' + player2_leds.charAt(player2_leds.length - 17 + (cup_number - 1) * 3) + '' + player2_leds.charAt(player2_leds.length - 16 + (cup_number - 1) * 3);
     }
 
     switch (RGB) {
