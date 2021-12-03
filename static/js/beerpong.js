@@ -22,8 +22,8 @@ $(document).ready(function () {
                 var dot = '#player1_dot' + (i + 1);
                 console.log(dot)
                 if (sensor_value === "1") {
-                    // $(dot).css("background-color", "green");
-                    setCorrectCupColor()
+                    $(dot).css("background-color", "green");
+                    // setCorrectCupColor()
                 } else {
                     $(dot).css("background-color", "#2C2C2C");
                 }
@@ -38,8 +38,8 @@ $(document).ready(function () {
                 var dot = '#player2_dot' + (i + 1);
                 console.log(dot)
                 if (sensor_value === "1") {
-                    // $(dot).css("background-color", "green");
-                    setCorrectCupColor()
+                    $(dot).css("background-color", "green");
+                    // setCorrectCupColor()
                 } else {
                     $(dot).css("background-color", "#2C2C2C");
                 }
