@@ -23,7 +23,7 @@ $(document).ready(function () {
                 console.log(dot)
                 if (sensor_value === "1") {
                     // $(dot).css("background-color", "green");
-                    setCorrectCupColor();
+                    setCorrectCupColor(dot);
                 } else {
                     $(dot).css("background-color", "#2C2C2C");
                 }
@@ -142,54 +142,43 @@ $(document).ready(function () {
     });
 });
 
-function setCorrectCupColor() {
-    var id_example = "player1_dot2";
-    var players = ['1', '2'];
-    var dots = ['1', '2', '3', '4', '5', '6'];
-    players.forEach(i => {
-        index_player_number = 6;
+function setCorrectCupColor(cup_id) {
+    var cup_number = cup_id.charAt(cup_id.length - 1);
 
-        id_cup_player = id_example.substring(0, index_player_number) + i + id_example.substring(index_player_number + 1);
+    if (player_number === '1') {
+        var RGB = player1_leds.charAt(player1_leds.length - 18 + (cup_id - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 17 + (cup_id - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 16 + (cup_id - 1) * 3);
+    } else {
+        var RGB = player2_leds.charAt(player2_leds.length - 18 + (cup_id - 1) * 3) + '' + player2_leds.charAt(player2_leds.length - 17 + (cup_id - 1) * 3) + '' + player2_leds.charAt(player2_leds.length - 16 + (cup_id - 1) * 3);
+    }
 
-        dots.forEach(j => {
-            index_dot_number = 11;
-
-            id_cup_player_and_number = id_cup_player.slice(0, -1) + j;
-
-            $('#' + id_cup_player_and_number).css('filter', 'brightness(1)');
-
-            var RGB = player1_leds.charAt(player1_leds.length - 18 + (j - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 17 + (j - 1) * 3) + '' + player1_leds.charAt(player1_leds.length - 16 + (j - 1) * 3);
-
-            switch (RGB) {
-                case '000':
-                    $('#' + id_cup_player_and_number).css('background-color', '#2C2C2C');
-                    break;
-                case '001':
-                    $('#' + id_cup_player_and_number).css('background-color', '#3399FF');
-                    break;
-                case '010':
-                    $('#' + id_cup_player_and_number).css('background-color', '#33FF33');
-                    break;
-                case '011':
-                    $('#' + id_cup_player_and_number).css('background-color', '#33FFFF');
-                    break;
-                case '100':
-                    $('#' + id_cup_player_and_number).css('background-color', '#FF3333');
-                    break;
-                case '101':
-                    $('#' + id_cup_player_and_number).css('background-color', '#9933FF');
-                    break;
-                case '110':
-                    $('#' + id_cup_player_and_number).css('background-color', '#FFFF33');
-                    break;
-                case '111':
-                    $('#' + id_cup_player_and_number).css('background-color', '#C0C0C0');
-                    break;
-                default:
-                    $('#' + id_cup_player_and_number).css('background-color', '#BBB');
-            }
-        });
-    });
+    switch (RGB) {
+        case '000':
+            $('#' + cup_id).css('background-color', '#2C2C2C');
+            break;
+        case '001':
+            $('#' + cup_id).css('background-color', '#3399FF');
+            break;
+        case '010':
+            $('#' + cup_id).css('background-color', '#33FF33');
+            break;
+        case '011':
+            $('#' + cup_id).css('background-color', '#33FFFF');
+            break;
+        case '100':
+            $('#' + cup_id).css('background-color', '#FF3333');
+            break;
+        case '101':
+            $('#' + cup_id).css('background-color', '#9933FF');
+            break;
+        case '110':
+            $('#' + cup_id).css('background-color', '#FFFF33');
+            break;
+        case '111':
+            $('#' + cup_id).css('background-color', '#C0C0C0');
+            break;
+        default:
+            $('#' + cup_id).css('background-color', '#BBB');
+    }
 }
 
 function changeCupColor(id) {
