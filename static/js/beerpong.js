@@ -25,7 +25,7 @@ $(document).ready(function () {
                     setCorrectCupColor(dot);
                 } else {
                     console.log(data["topic"], sensor_value);
-                    $(dot).css("background-color", "#2C2C2C");
+                    $('#' + dot).css("background-color", "#2C2C2C");
                 }
             }));
         }
@@ -40,7 +40,7 @@ $(document).ready(function () {
                     // $(dot).css("background-color", "green");
                     setCorrectCupColor();
                 } else {
-                    $(dot).css("background-color", "#2C2C2C");
+                    $('#' + dot).css("background-color", "#2C2C2C");
                 }
             }));
         }
