@@ -143,6 +143,7 @@ $(document).ready(function () {
 });
 
 function setCorrectCupColor(cup_id) {
+    var player_number = cup_id.charAt(cup_id.length - 6);
     var cup_number = cup_id.charAt(cup_id.length - 1);
 
     if (player_number === '1') {
