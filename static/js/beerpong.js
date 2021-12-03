@@ -13,18 +13,18 @@ $(document).ready(function () {
     socket.emit('subscribe', data = subscribe_data_player_2);
 
     socket.on('mqtt_message', function (data) {
-        console.log(data["topic"])
         if (data["topic"] === "sensorValP1") {
             var payload = data["payload"];
             sensor_values = payload.split("");
 
             sensor_values.forEach((function (sensor_value, i) {
                 var dot = 'player1_dot' + (i + 1);
-                console.log(dot)
                 if (sensor_value === "1") {
+                    console.log(data["topic"], sensor_value);
                     // $(dot).css("background-color", "green");
                     setCorrectCupColor(dot);
                 } else {
+                    console.log(data["topic"], sensor_value);
                     $(dot).css("background-color", "#2C2C2C");
                 }
             }));
@@ -36,7 +36,6 @@ $(document).ready(function () {
 
             sensor_values.forEach((function (sensor_value, i) {
                 var dot = 'player2_dot' + (i + 1);
-                console.log(dot)
                 if (sensor_value === "1") {
                     // $(dot).css("background-color", "green");
                     setCorrectCupColor();
@@ -95,7 +94,6 @@ $(document).ready(function () {
             var topic = 'ledValP1';
             var message = player1_leds;
             var qos = 1;
-            console.log()
             var data = '{"topic": "' + topic + '", "message": "' + message + '", "qos": ' + qos + '}';
             socket.emit('publish', data = data);
         } else {
@@ -137,7 +135,6 @@ $(document).ready(function () {
                 $('#' + g_id_selected_dot).css('background-color', '#BBB');
         }
 
-        console.log(RGB, player_number, led_number);
         $('.rgb_div').hide();
     });
 });
@@ -152,7 +149,6 @@ function setCorrectCupColor(cup_id) {
     } else {
         var RGB = player2_leds.charAt(player2_leds.length - 18 + (cup_number - 1) * 3) + '' + player2_leds.charAt(player2_leds.length - 17 + (cup_number - 1) * 3) + '' + player2_leds.charAt(player2_leds.length - 16 + (cup_number - 1) * 3);
     }
-    console.log(cup_id, RGB);
 
     switch (RGB) {
         case '000':
